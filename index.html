@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eddy Hong — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0B0B0D;
+  --fg: #E8E5DF;
+  --dim: #807B76;
+  --accent: #F27A3A;
+  --accent2: #3AF2C8;
+  --card: #141417;
+  --border: #252528;
+  --mono: 'Space Mono', monospace;
+  --serif: 'Newsreader', Georgia, serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+a { color: var(--fg); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent); }
+
+.noise {
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+.page { max-width: 740px; margin: 0 auto; padding: 72px 24px 100px; }
+
+/* ── HERO ── */
+.hero { margin-bottom: 48px; }
+
+.hero-label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--dim); margin-bottom: 20px;
+}
+
+.hero-name {
+  font-family: var(--serif); font-size: clamp(48px, 9vw, 72px);
+  font-weight: 400; letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 24px;
+}
+.hero-name .dot { color: var(--accent); }
+
+.hero-bio {
+  font-family: var(--serif); font-size: 18px; font-weight: 400;
+  color: var(--dim); max-width: 540px; line-height: 1.7;
+  font-style: italic;
+}
+
+.hero-links {
+  display: flex; gap: 20px; margin-top: 32px; flex-wrap: wrap;
+}
+.hero-links a {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--dim); padding: 8px 16px;
+  border: 1px solid var(--border); transition: all 0.25s;
+}
+.hero-links a:hover {
+  color: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(242,122,58,0.15);
+}
+
+/* ── SECTIONS ── */
+.section { margin-bottom: 72px; }
+.section-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 28px;
+}
+.section-num {
+  font-size: 11px; color: var(--accent); letter-spacing: 0.06em;
+  font-weight: 700;
+}
+.section-title {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--dim);
+}
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* ── EXPERIENCE ── */
+.exp-item {
+  display: grid; grid-template-columns: 1fr; gap: 4px;
+  padding: 20px 0; border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.exp-item:last-child { border-bottom: none; }
+
+.exp-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: 8px;
+}
+.exp-role { font-size: 15px; font-weight: 700; }
+.exp-date { font-size: 12px; color: var(--dim); letter-spacing: 0.03em; flex-shrink: 0; }
+.exp-company { font-size: 13px; color: var(--accent); margin-bottom: 6px; }
+
+.exp-projects { margin-top: 8px; }
+.exp-project-name {
+  font-size: 13px; font-weight: 700; color: var(--fg);
+  margin-top: 10px; margin-bottom: 2px;
+}
+.exp-desc {
+  font-size: 12px; color: var(--dim); line-height: 1.6;
+}
+
+.exp-tags {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
+}
+.exp-tag {
+  font-size: 10px; letter-spacing: 0.04em; padding: 3px 8px;
+  background: rgba(242,122,58,0.06); color: var(--accent); border: 1px solid rgba(242,122,58,0.12);
+}
+
+/* ── GITHUB GRASS ── */
+.gh-grass { width: 100%; overflow-x: auto; padding: 4px 0; }
+.gh-grass-img { width: 100%; min-width: 640px; display: block; }
+
+/* ── TECH STACK ── */
+.stack-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1px;
+  background: var(--border);
+}
+.stack-cell {
+  background: var(--bg); padding: 16px 18px;
+}
+.stack-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--dim); margin-bottom: 6px; }
+.stack-items { font-size: 13px; font-weight: 700; line-height: 1.6; }
+
+/* ── PROJECTS ── */
+.project-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+
+.project-card {
+  background: var(--bg); padding: 20px 24px;
+  display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start;
+  transition: background 0.2s;
+}
+.project-card:hover { background: var(--card); }
+
+.project-name { font-size: 15px; font-weight: 700; }
+.project-name .live-dot {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent2); margin-left: 8px; vertical-align: middle;
+  box-shadow: 0 0 6px rgba(58,242,200,0.4);
+}
+.project-desc { font-size: 12px; color: var(--dim); line-height: 1.5; margin-top: 4px; }
+.project-meta { text-align: right; flex-shrink: 0; }
+.project-lang { font-size: 11px; color: var(--accent); }
+.project-stars { font-size: 11px; color: var(--dim); }
+
+/* ── OSS ── */
+.oss-item {
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline;
+}
+.oss-item:last-child { border-bottom: none; }
+.oss-name { font-size: 14px; font-weight: 700; }
+.oss-desc { font-size: 12px; color: var(--dim); }
+
+/* ── CONTACT ── */
+.contact-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1px;
+  background: var(--border);
+}
+.contact-cell {
+  background: var(--bg); padding: 20px;
+  transition: background 0.2s;
+}
+.contact-cell:hover { background: var(--card); }
+.contact-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--dim); margin-bottom: 4px; }
+.contact-value { font-size: 14px; font-weight: 700; }
+.contact-value a { border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+.contact-value a:hover { border-color: var(--accent); }
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--border);
+  font-size: 11px; color: var(--dim); letter-spacing: 0.04em;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero { animation: fadeUp 0.7s ease both; }
+.section:nth-of-type(1) { animation: fadeUp 0.7s 0.08s ease both; }
+.section:nth-of-type(2) { animation: fadeUp 0.7s 0.14s ease both; }
+.section:nth-of-type(3) { animation: fadeUp 0.7s 0.20s ease both; }
+.section:nth-of-type(4) { animation: fadeUp 0.7s 0.26s ease both; }
+.section:nth-of-type(5) { animation: fadeUp 0.7s 0.32s ease both; }
+.footer { animation: fadeUp 0.7s 0.38s ease both; }
+
+/* ── HERO ROW ── */
+.hero-row {
+  margin-bottom: 24px;
+}
+.hero-name { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  .page { padding: 48px 16px 72px; }
+  .exp-top { flex-direction: column; }
+  .project-card { grid-template-columns: 1fr; }
+  .stack-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Software Engineer · Seoul</div>
+    <div class="hero-row">
+      <h1 class="hero-name">Hong<br>ByeongSu<span class="dot">.</span></h1>
+    </div>
+    <p class="hero-bio">Engineer who believes in a verifiable, open economy — and building toward the day decentralized systems become the norm, not the exception.</p>
+    <div class="hero-links">
+      <a href="https://github.com/byeongsu-hong" target="_blank">GitHub</a>
+      <a href="https://twitter.com/byeongsu_hong" target="_blank">X</a>
+      <a href="https://www.linkedin.com/in/byeongsu-hong" target="_blank">LinkedIn</a>
+      <a href="https://byeongsu.dev" target="_blank">byeongsu.dev</a>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Experience</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <span class="exp-role">Full Stack Engineer</span>
+        <span class="exp-date">Jul 2023 — Feb 2026</span>
+      </div>
+      <div class="exp-company">Manythings · Seoul</div>
+      <div class="exp-projects">
+        <div class="exp-project-name">Mitosis</div>
+        <div class="exp-desc">DeFi protocol enabling programmable liquidity across multiple chains. Led protocol design and smart contract development across EVM and CosmWasm. Reduced validator operation costs by 20–30%.</div>
+        <div class="exp-project-name">Hyperlane (cw-hyperlane)</div>
+        <div class="exp-desc">CosmWasm implementation of the Hyperlane interchain messaging protocol. Operated validators across 114+ chains on Kubernetes. Optimized RPC queries by ~28%.</div>
+        <div class="exp-project-name">Kaizen</div>
+        <div class="exp-desc">Price range prediction market protocol. Architected the node in Rust with modular STF design. Achieved 180k+ TPS in internal testing.</div>
+      </div>
+      <div class="exp-tags">
+        <span class="exp-tag">Golang</span><span class="exp-tag">Rust</span><span class="exp-tag">Solidity</span><span class="exp-tag">TypeScript</span>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <span class="exp-role">Software Engineer</span>
+        <span class="exp-date">Jan 2022 — Dec 2022</span>
+      </div>
+      <div class="exp-company">Terraform Labs · Seoul</div>
+      <div class="exp-projects">
+        <div class="exp-project-name">Anchor Protocol</div>
+        <div class="exp-desc">Contributed to eth-anchor, the Ethereum bridge layer for Anchor Protocol. Engineered Solidity smart contracts for seamless cross-chain interactions between Ethereum and Terra.</div>
+        <div class="exp-project-name">Pylon Protocol</div>
+        <div class="exp-desc">Led end-to-end design and development of Pylon Protocol, a yield redirection platform on Terra. Architected core contracts and developed CosmWasm smart contracts in Rust, supporting peak TVL of $200M+.</div>
+        <div class="exp-project-name">Mirror Protocol</div>
+        <div class="exp-desc">Designed and deployed Ethereum-side yield farming contracts for Mirror Protocol. Architected and implemented liquidity yield farming smart contracts in Solidity, ensuring secure handling of $100M+ in liquidity.</div>
+      </div>
+      <div class="exp-tags">
+        <span class="exp-tag">Golang</span><span class="exp-tag">Solidity</span><span class="exp-tag">Rust</span><span class="exp-tag">TypeScript</span>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <span class="exp-role">Blockchain Engineer</span>
+        <span class="exp-date">2018 — 2021</span>
+      </div>
+      <div class="exp-company">AB180 · Seoul</div>
+      <div class="exp-projects">
+        <div class="exp-project-name">Airbloc Protocol</div>
+        <div class="exp-desc">Contributed to a decentralized data trading system, working across smart contracts, SDKs, and worker services. Developed and tested smart contracts in Solidity (Truffle), achieving 100% branch coverage.</div>
+        <div class="exp-project-name">Airbloc Data Pipeline</div>
+        <div class="exp-desc">Participated in building a data pipeline processing batch and real-time data from extractive consortium partners. Supported infrastructure migration from AWS Lambda to Kubernetes (Argo Events / Argo Workflows).</div>
+      </div>
+      <div class="exp-tags">
+        <span class="exp-tag">Golang</span><span class="exp-tag">Solidity</span><span class="exp-tag">Python</span><span class="exp-tag">Kubernetes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GITHUB ACTIVITY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">GitHub Activity</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="gh-grass">
+      <img src="https://ghchart.rshah.org/F27A3A/byeongsu-hong" alt="GitHub contribution graph" class="gh-grass-img" />
+    </div>
+  </div>
+
+  <!-- TECH STACK -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Tech Stack</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-cell">
+        <div class="stack-label">Languages</div>
+        <div class="stack-items">Go · Rust<br>Solidity · TypeScript<br>Python</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-label">Blockchain</div>
+        <div class="stack-items">EVM · CosmWasm<br>Cosmos SDK · Anchor<br>Solana</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-label">Infra</div>
+        <div class="stack-items">Kubernetes · Terraform<br>AWS · Argo<br>Foundry</div>
+      </div>
+      <div class="stack-cell">
+        <div class="stack-label">Protocols</div>
+        <div class="stack-items">Hyperlane · Mitosis<br>Osmosis · Rollkit<br>Ponder</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Projects</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="project-list">
+      <a class="project-card" href="https://vital.byeongsu.dev" target="_blank">
+        <div>
+          <div class="project-name">vital<span class="live-dot"></span></div>
+          <div class="project-desc">Real-time cardiac visualization system that syncs music playback with your heart rate.</div>
+        </div>
+      </a>
+      <a class="project-card" href="https://squad.byeongsu.dev" target="_blank">
+        <div>
+          <div class="project-name">squad<span class="live-dot"></span></div>
+          <div class="project-desc">Squad interface for third-party SVM chains.</div>
+        </div>
+      </a>
+      <a class="project-card" href="https://github.com/byeongsu-hong/pranklin" target="_blank">
+        <div>
+          <div class="project-name">pranklin</div>
+          <div class="project-desc">Layer-2 Perpetual DEX built with Rollkit.</div>
+        </div>
+      </a>
+      <a class="project-card" href="https://github.com/byeongsu-hong/sogu" target="_blank">
+        <div>
+          <div class="project-name">sogu</div>
+          <div class="project-desc">Ponder-style Solana indexer framework for Anchor v0.30+ programs.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- OPEN SOURCE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Open Source</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="oss-item">
+      <div>
+        <a class="oss-name" href="https://github.com/osmosis-labs/osmosis" target="_blank">osmosis-labs / osmosis</a>
+        <div class="oss-desc">The AMM Laboratory</div>
+      </div>
+      <div class="project-meta"><div class="project-lang">Go</div><div class="project-stars">★ 962</div></div>
+    </div>
+    <div class="oss-item">
+      <div>
+        <a class="oss-name" href="https://github.com/many-things/cw-hyperlane" target="_blank">many-things / cw-hyperlane</a>
+        <div class="oss-desc">CosmWasm Hyperlane implementation</div>
+      </div>
+      <div class="project-meta"><div class="project-lang">Rust</div><div class="project-stars">★ 55</div></div>
+    </div>
+    <div class="oss-item">
+      <div>
+        <a class="oss-name" href="https://github.com/mitosis-org/protocol" target="_blank">mitosis-org / protocol</a>
+        <div class="oss-desc">Contracts for programmable liquidity</div>
+      </div>
+      <div class="project-meta"><div class="project-lang">Solidity</div><div class="project-stars">★ 17</div></div>
+    </div>
+    <div class="oss-item">
+      <div>
+        <a class="oss-name" href="https://github.com/pylon-protocol/pylon-core-contracts" target="_blank">pylon-protocol / pylon-core-contracts</a>
+        <div class="oss-desc">Implementation of Pylon Protocol</div>
+      </div>
+      <div class="project-meta"><div class="project-lang">Rust</div><div class="project-stars">★ 23</div></div>
+    </div>
+    <div class="oss-item">
+      <div>
+        <a class="oss-name" href="https://github.com/Anchor-Protocol/eth-anchor-contracts" target="_blank">Anchor-Protocol / eth-anchor-contracts</a>
+        <div class="oss-desc">Ethereum-side wrapper contracts for Anchor</div>
+      </div>
+      <div class="project-meta"><div class="project-lang">Solidity</div><div class="project-stars">★ 17</div></div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">Contact</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-cell">
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value"><a href="https://github.com/byeongsu-hong" target="_blank">byeongsu-hong</a></div>
+      </div>
+      <div class="contact-cell">
+        <div class="contact-label">X / Twitter</div>
+        <div class="contact-value"><a href="https://twitter.com/byeongsu_hong" target="_blank">@byeongsu_hong</a></div>
+      </div>
+      <div class="contact-cell">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value"><a href="https://www.linkedin.com/in/byeongsu-hong" target="_blank">in/byeongsu-hong</a></div>
+      </div>
+      <div class="contact-cell">
+        <div class="contact-label">Web</div>
+        <div class="contact-value"><a href="https://byeongsu.dev" target="_blank">byeongsu.dev</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>© 2026 Hong ByeongSu</span>
+    <span>🍊</span>
+  </div>
+
+</div>
+
+<!-- Tweaks -->
+<div id="tweaks-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accentColor": "#F27A3A",
+  "darkMode": true
+}/*EDITMODE-END*/;
+
+function App() {
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    const r = document.documentElement.style;
+    r.setProperty('--accent', tweaks.accentColor);
+    if (tweaks.darkMode) {
+      r.setProperty('--bg', '#0B0B0D');
+      r.setProperty('--fg', '#E8E5DF');
+      r.setProperty('--dim', '#807B76');
+      r.setProperty('--card', '#141417');
+      r.setProperty('--border', '#252528');
+    } else {
+      r.setProperty('--bg', '#F6F4F0');
+      r.setProperty('--fg', '#1A1918');
+      r.setProperty('--dim', '#80796F');
+      r.setProperty('--card', '#EDEAE4');
+      r.setProperty('--border', '#D8D4CC');
+    }
+  }, [tweaks]);
+
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakColor label="Accent color" value={tweaks.accentColor} onChange={v => setTweak('accentColor', v)} />
+      <TweakToggle label="Dark mode" value={tweaks.darkMode} onChange={v => setTweak('darkMode', v)} />
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<App />);
+</script>
+</body>
+</html>
