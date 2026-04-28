@@ -38,11 +38,14 @@ a:hover { color: var(--accent); }
 .hero { margin-bottom: 48px; }
 
 .hero-label {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px; flex-wrap: wrap;
   font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
   color: var(--dim); margin-bottom: 20px;
 }
-.hero-label a { color: var(--dim); }
+.hero-label a { color: var(--dim); transition: color 0.2s; }
 .hero-label a:hover { color: var(--accent); }
+.hero-lab-link::after { content: ' →'; }
 
 .hero-name {
   font-family: var(--serif); font-size: clamp(48px, 9vw, 72px);
@@ -232,7 +235,7 @@ a:hover { color: var(--accent); }
 
   body { background: #fff; font-size: 12px; }
 
-  .noise, #tweaks-root { display: none !important; }
+  .noise, #tweaks-root, .hero-lab-link { display: none !important; }
 
   .page { max-width: 100%; padding: 0; }
 
