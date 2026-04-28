@@ -331,7 +331,7 @@ a:hover { color: var(--accent); }
         <div class="exp-project-name">Mitosis</div>
         <div class="exp-desc">Designed and built core server infrastructure for a multi-chain DeFi protocol — cross-chain transaction processing, state management, and contract versioning systems across EVM and CosmWasm. Engineered ops tooling and monitoring to ensure protocol reliability. Reduced validator costs by 20–30% through infrastructure right-sizing and node pruning.</div>
         <div class="exp-project-name">Hyperlane (cw-hyperlane)</div>
-        <div class="exp-desc">Built and operated high-availability validator infrastructure across 114+ chains on Kubernetes with GitOps pipelines (ArgoCD) and full observability via Prometheus and Grafana. Optimized RPC query throughput by ~28%, reducing daily API calls from 97k to 70k. Developed and audited CosmWasm contracts enabling cross-chain message passing.</div>
+        <div class="exp-desc">Primary contributor (21 of 30 commits). Implemented multisig ISM signature verification, warp routes for token bridging, and led Neutron/Osmosis mainnet deployments. Built and operated high-availability validator infrastructure across 114+ chains on Kubernetes with ArgoCD GitOps and Prometheus/Grafana observability. Optimized RPC throughput by ~28% (97k → 70k daily calls).</div>
         <div class="exp-project-name">Kaizen</div>
         <div class="exp-desc">Architected a custom blockchain node from scratch in Rust — separating Engine, Executor, and Storage layers for deterministic execution and fraud-proof support. Implemented RocksDB + JMT (Jellyfish Merkle Tree) for versioned state management. Achieved 180k+ TPS in internal benchmarks. Built TypeScript SDK for protocol integrations.</div>
       </div>
@@ -348,7 +348,7 @@ a:hover { color: var(--accent); }
       <div class="exp-company">Terraform Labs · Seoul</div>
       <div class="exp-projects">
         <div class="exp-project-name">Anchor Protocol</div>
-        <div class="exp-desc">Engineered eth-anchor, the Ethereum bridge layer for Anchor Protocol — Solidity contracts handling cross-chain asset flows between Ethereum and Terra at scale.</div>
+        <div class="exp-desc">Led development of eth-anchor, the Ethereum bridge layer for Anchor Protocol — primary engineer (28 of 30 commits). Implemented proxy upgradeability pattern, Curve pool integration, non-atomic init-finish operation flow for cross-chain delays, and mainnet deployment tooling.</div>
         <div class="exp-project-name">Pylon Protocol</div>
         <div class="exp-desc">Led 0→1 design and development of Pylon Protocol, a yield redirection platform on Terra. Architected core CosmWasm contracts in Rust from the ground up, supporting peak TVL of $200M+.</div>
         <div class="exp-project-name">Mirror Protocol</div>
@@ -439,13 +439,13 @@ a:hover { color: var(--accent); }
       <a class="project-card" href="https://github.com/byeongsu-hong/pranklin" target="_blank">
         <div>
           <div class="project-name">pranklin</div>
-          <div class="project-desc">Layer-2 Perpetual DEX built with Rollkit.</div>
+          <div class="project-desc">High-performance perpetual futures engine in Rust — 330K+ TPS, 386ns state ops, sub-millisecond order matching. 11 specialized crates with modular STF, RocksDB + JMT state, EIP-712 auth.</div>
         </div>
       </a>
       <a class="project-card" href="https://github.com/byeongsu-hong/sogu" target="_blank">
         <div>
           <div class="project-name">sogu</div>
-          <div class="project-desc">Ponder-style Solana indexer framework for Anchor v0.30+ programs.</div>
+          <div class="project-desc">Ponder-style indexer framework for Solana Anchor programs. Real-time + historical backfill, Drizzle ORM, PostgreSQL/PGLite, Yellowstone gRPC, Prometheus metrics, web dashboard.</div>
         </div>
       </a>
     </div>
