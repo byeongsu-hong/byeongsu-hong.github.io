@@ -32,7 +32,14 @@ a:hover { color: var(--accent); }
   background-size: 256px;
 }
 
-.page { max-width: 740px; margin: 0 auto; padding: 72px 24px 100px; }
+.page { max-width: clamp(740px, 58vw, 920px); margin: 0 auto; padding: 72px 24px 100px; }
+
+@media (min-width: 1280px) {
+  body { font-size: 15px; }
+}
+@media (min-width: 1600px) {
+  body { font-size: 16px; }
+}
 
 /* ── HERO ── */
 .hero { margin-bottom: 48px; }
