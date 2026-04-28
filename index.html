@@ -274,8 +274,9 @@ a:hover { color: var(--accent); }
   /* avoid breaking mid-item */
   .exp-item, .oss-item, .project-card, .stack-cell { break-inside: avoid; }
 
-  /* hide GitHub grass — won't print usefully */
-  .section:has(.gh-grass) { display: none; }
+  /* hide GitHub grass and Projects section */
+  .section:has(.gh-grass),
+  .section:has(.project-list) { display: none; }
 
   .footer { margin-top: 24px; padding-top: 12px; }
 
