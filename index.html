@@ -218,6 +218,79 @@ a:hover { color: var(--accent); }
   .stack-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 18mm;
+  }
+
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --dim: #555555;
+    --accent: #c45e1a;
+    --accent2: #1abf98;
+    --card: #f5f5f5;
+    --border: #dddddd;
+  }
+
+  * { animation: none !important; transition: none !important; }
+
+  body { background: #fff; font-size: 12px; }
+
+  .noise, #tweaks-root { display: none !important; }
+
+  .page { max-width: 100%; padding: 0; }
+
+  .hero { margin-bottom: 28px; }
+  .hero-name { font-size: 42px; }
+  .hero-bio { font-size: 14px; }
+
+  .hero-links a {
+    padding: 4px 10px;
+    border-color: var(--border);
+    color: var(--dim);
+  }
+  .hero-links a:hover { box-shadow: none; }
+
+  .section { margin-bottom: 28px; }
+  .section-header { margin-bottom: 14px; }
+
+  /* keep stack/contact grids from using background trick */
+  .stack-grid, .project-list, .contact-grid {
+    gap: 0;
+    background: transparent;
+    border: 1px solid var(--border);
+  }
+  .stack-cell, .project-card, .contact-cell {
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+  .stack-cell:last-child, .contact-cell:last-child { border-bottom: none; }
+
+  .project-card { grid-template-columns: 1fr; }
+
+  /* avoid breaking mid-item */
+  .exp-item, .oss-item, .project-card, .stack-cell { break-inside: avoid; }
+
+  /* hide GitHub grass — won't print usefully */
+  .section:has(.gh-grass) { display: none; }
+
+  .footer { margin-top: 24px; padding-top: 12px; }
+
+  a { color: inherit; }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9px;
+    color: var(--dim);
+  }
+  /* suppress URL display for nav/social links and cards */
+  .hero-links a::after,
+  .project-card::after,
+  .oss-name::after,
+  .contact-value a::after { content: none; }
+}
 </style>
 </head>
 <body>
