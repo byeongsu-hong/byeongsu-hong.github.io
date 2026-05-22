@@ -186,18 +186,12 @@ a:hover { color: var(--accent); }
   to { opacity: 1; transform: translateY(0); }
 }
 .hero { animation: fadeUp 0.7s ease both; }
-.section:nth-of-type(1) { animation: fadeUp 0.7s 0.08s ease both; }
-.section:nth-of-type(2) { animation: fadeUp 0.7s 0.14s ease both; }
-.section:nth-of-type(3) { animation: fadeUp 0.7s 0.20s ease both; }
-.section:nth-of-type(4) { animation: fadeUp 0.7s 0.26s ease both; }
-.section:nth-of-type(5) { animation: fadeUp 0.7s 0.32s ease both; }
+.section:nth-of-type(2) { animation: fadeUp 0.7s 0.08s ease both; }
+.section:nth-of-type(3) { animation: fadeUp 0.7s 0.14s ease both; }
+.section:nth-of-type(4) { animation: fadeUp 0.7s 0.20s ease both; }
+.section:nth-of-type(5) { animation: fadeUp 0.7s 0.26s ease both; }
 .footer { animation: fadeUp 0.7s 0.38s ease both; }
 
-/* ── HERO ROW ── */
-.hero-row {
-  margin-bottom: 24px;
-}
-.hero-name { margin-bottom: 0; }
 
 @media (max-width: 600px) {
   .page { padding: 48px 16px 72px; }

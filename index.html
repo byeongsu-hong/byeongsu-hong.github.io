@@ -3,9 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eddy Hong — Software Engineer</title>
+<title>Eddy Hong — Protocol Engineer</title>
+<meta name="description" content="Eddy Hong — Protocol engineer with 8 years building blockchain infrastructure.">
+<meta property="og:title" content="Eddy Hong — Protocol Engineer">
+<meta property="og:description" content="Protocol engineer with 8 years building blockchain infrastructure.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://unpkg.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,18 +23,16 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-label">
-      <span>Server Developer · Seoul</span>
+      <span>Protocol Engineer · Seoul</span>
       <a href="lab.html" class="hero-lab-link">lab</a>
     </div>
-    <div class="hero-row">
-      <h1 class="hero-name">Hong<br>ByeongSu<span class="dot">.</span></h1>
-    </div>
-    <p class="hero-bio">Blockchain infrastructure engineer who designs systems from scratch — transaction pipelines, high-availability node operations, and multi-chain protocol architecture built for production.</p>
+    <h1 class="hero-name">Hong<br>ByeongSu<span class="dot" aria-hidden="true">.</span></h1>
+    <p class="hero-bio">Protocol engineer with 8 years building at the infrastructure layer.</p>
     <div class="hero-links">
-      <a href="https://github.com/byeongsu-hong" target="_blank">GitHub</a>
-      <a href="https://twitter.com/byeongsu_hong" target="_blank">X</a>
-      <a href="https://www.linkedin.com/in/byeongsu-hong" target="_blank">LinkedIn</a>
-      <a href="https://byeongsu.dev" target="_blank">byeongsu.dev</a>
+      <a href="https://github.com/byeongsu-hong" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://twitter.com/byeongsu_hong" target="_blank" rel="noopener noreferrer">X</a>
+      <a href="https://www.linkedin.com/in/byeongsu-hong" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://byeongsu.dev" target="_blank" rel="noopener noreferrer">byeongsu.dev</a>
     </div>
   </div>
 
@@ -40,17 +46,19 @@
 
     <div class="exp-item">
       <div class="exp-top">
-        <span class="exp-role">Full Stack Engineer</span>
+        <span class="exp-role">Protocol Engineer</span>
         <span class="exp-date">Jul 2023 — Feb 2026</span>
       </div>
       <div class="exp-company">Manythings · Seoul</div>
       <div class="exp-projects">
         <div class="exp-project-name">Mitosis</div>
-        <div class="exp-desc">Designed and built core server infrastructure for a multi-chain DeFi protocol — cross-chain transaction processing, state management, and contract versioning systems across EVM and CosmWasm. Engineered ops tooling and monitoring to ensure protocol reliability. Reduced validator costs by 20–30% through infrastructure right-sizing and node pruning.</div>
-        <div class="exp-project-name">Hyperlane (cw-hyperlane)</div>
-        <div class="exp-desc">Implemented multisig ISM signature verification, warp routes for token bridging, and led Neutron/Osmosis mainnet deployments. Built and operated high-availability validator infrastructure across 114+ chains on Kubernetes with ArgoCD GitOps and Prometheus/Grafana observability. Optimized RPC throughput by ~28% (97k → 70k daily calls).</div>
+        <div class="exp-desc">Joined at founding stage — designed the LRT vault system (factory + beacon proxy, deterministic deployment) attracting up to $100M in initial liquidity; contributed Lista CDP integration and earn manager to the extensible vault built for a pre-TGE Binance campaign. Designed the Mitosis L1 execution layer (CometBFT + Engine API): validator staking, reward settlement, VLF vault, and core hub-chain protocols. All on-chain contracts audited by Zellic.</div>
+        <div class="exp-project-name">cw-hyperlane</div>
+        <div class="exp-desc">Primary author of the official CosmWasm implementation of Hyperlane — multisig ISM signature verification, warp routes for token bridging, Neutron/Osmosis mainnet deployment. Audited by Zellic.</div>
+        <div class="exp-project-name">Hyperlane Validator Operations</div>
+        <div class="exp-desc">Built and operate high-availability validator infrastructure across 125+ chains on Kubernetes with ArgoCD GitOps and Prometheus/Grafana observability. Reduced external RPC dependency by 28% (97k → 70k daily calls) through request batching and caching.</div>
         <div class="exp-project-name">Kaizen</div>
-        <div class="exp-desc">Architected a custom blockchain node from scratch in Rust — separating Engine, Executor, and Storage layers for deterministic execution and fraud-proof support. Implemented RocksDB + JMT (Jellyfish Merkle Tree) for versioned state management. Achieved 180k+ TPS in internal benchmarks. Built TypeScript SDK for protocol integrations.</div>
+        <div class="exp-desc">Sole engineer — built the execution engine for a price range prediction market protocol: event-sourced aggregates, modular STFs, parallel execution via aggregate access, RocksDB + JMT versioned state. Developed an Oracle Service aggregating real-time WebSocket feeds from major CEXs (later migrated to Stork) and a TypeScript SDK abstracting the Borsh wire format for integrations. Shipped to alpha.</div>
       </div>
       <div class="exp-tags">
         <span class="exp-tag">Golang</span><span class="exp-tag">Rust</span><span class="exp-tag">Solidity</span><span class="exp-tag">TypeScript</span>
@@ -60,16 +68,16 @@
     <div class="exp-item">
       <div class="exp-top">
         <span class="exp-role">Software Engineer</span>
-        <span class="exp-date">Jan 2022 — Dec 2022</span>
+        <span class="exp-date">Jan 2021 — Dec 2021</span>
       </div>
       <div class="exp-company">Terraform Labs · Seoul</div>
       <div class="exp-projects">
         <div class="exp-project-name">Anchor Protocol</div>
-        <div class="exp-desc">Led development of eth-anchor, the Ethereum bridge layer for Anchor Protocol. Implemented proxy upgradeability pattern, Curve pool integration, non-atomic init-finish operation flow for cross-chain delays, and mainnet deployment tooling.</div>
+        <div class="exp-desc">Led development of eth-anchor, the Ethereum bridge layer for Anchor Protocol ($16B+ peak TVL). Implemented proxy upgradeability pattern and non-atomic init-finish flow for cross-chain delay handling.</div>
         <div class="exp-project-name">Pylon Protocol</div>
-        <div class="exp-desc">Led 0→1 design and development of Pylon Protocol, a yield redirection platform on Terra. Architected core CosmWasm contracts in Rust from the ground up, supporting peak TVL of $200M+.</div>
+        <div class="exp-desc">Self-proposed and led Pylon Protocol 0→1 as an internal incubation — a yield redirection platform on Terra. Architected core CosmWasm contracts in Rust from the ground up, reaching $200M+ peak TVL. Audited.</div>
         <div class="exp-project-name">Mirror Protocol</div>
-        <div class="exp-desc">Designed and deployed Ethereum-side liquidity yield farming contracts for Mirror Protocol, handling $100M+ in assets with financial-grade reliability requirements.</div>
+        <div class="exp-desc">Designed Ethereum-side incentivized LP contracts for Mirror Protocol ($100M+ in assets) from scratch — initially contributing before formally joining TFL. Managed end-to-end audit and production deployment.</div>
       </div>
       <div class="exp-tags">
         <span class="exp-tag">Golang</span><span class="exp-tag">Solidity</span><span class="exp-tag">Rust</span><span class="exp-tag">TypeScript</span>
@@ -84,9 +92,9 @@
       <div class="exp-company">AB180 · Seoul</div>
       <div class="exp-projects">
         <div class="exp-project-name">Airbloc Protocol</div>
-        <div class="exp-desc">Developed and tested Solidity smart contracts for a decentralized data trading system, achieving 100% branch coverage across contracts, SDKs, and worker services.</div>
+        <div class="exp-desc">Developed and tested Solidity smart contracts for a decentralized data trading protocol, achieving 100% branch coverage. Built Go and Python SDKs, contributing to an architecture transition from a LibP2P/gRPC P2P node to a lightweight protocol SDK. Developed a Go-based worker service for daily on-chain synchronization of consent records with Klaytn Fee Payer proxy injection.</div>
         <div class="exp-project-name">Airbloc Data Pipeline</div>
-        <div class="exp-desc">Built a real-time and batch data pipeline for consortium partners. Led infrastructure migration from AWS Lambda to Kubernetes using Argo Events and Argo Workflows.</div>
+        <div class="exp-desc">Built a real-time and batch data pipeline for enterprise consortium partners. Managed Terraform infrastructure and migrated from Serverless/AWS Lambda to Kubernetes (Argo Events + Argo Workflows) on AWS EKS with FluxCD GitOps.</div>
       </div>
       <div class="exp-tags">
         <span class="exp-tag">Golang</span><span class="exp-tag">Solidity</span><span class="exp-tag">Python</span><span class="exp-tag">Kubernetes</span>
@@ -108,15 +116,11 @@
       </div>
       <div class="stack-cell">
         <div class="stack-label">Blockchain</div>
-        <div class="stack-items">EVM · CosmWasm<br>Cosmos SDK · Terra<br>Solana</div>
+        <div class="stack-items">EVM · CosmWasm<br>Cosmos SDK · Neutron<br>Solana</div>
       </div>
       <div class="stack-cell">
         <div class="stack-label">Infra</div>
         <div class="stack-items">Kubernetes · Argo<br>Prometheus · Grafana</div>
-      </div>
-      <div class="stack-cell">
-        <div class="stack-label">Protocols</div>
-        <div class="stack-items">Hyperlane · Mitosis<br>Osmosis · Pylon</div>
       </div>
     </div>
   </div>
@@ -130,42 +134,42 @@
     </div>
     <div class="oss-item">
       <div>
-        <a class="oss-name" href="https://github.com/osmosis-labs/osmosis" target="_blank">osmosis-labs / osmosis</a>
-        <div class="oss-desc">Early core contributor — x/gamm AMM module</div>
+        <a class="oss-name" href="https://github.com/osmosis-labs/osmosis" target="_blank" rel="noopener noreferrer">osmosis-labs / osmosis</a>
+        <div class="oss-desc">Built x/gamm AMM module from scratch — pool creation, swap logic, single-asset deposits, gRPC query layer; contributed 8 months before mainnet launch</div>
       </div>
       <div class="project-meta"><div class="project-lang">Go</div><div class="project-stars">★ 962</div></div>
     </div>
     <div class="oss-item">
       <div>
-        <a class="oss-name" href="https://github.com/hyperlane-xyz/hyperlane-monorepo" target="_blank">hyperlane-xyz / hyperlane-monorepo</a>
-        <div class="oss-desc">Co-author — Cosmos / CosmWasm agent integration</div>
+        <a class="oss-name" href="https://github.com/hyperlane-xyz/hyperlane-monorepo" target="_blank" rel="noopener noreferrer">hyperlane-xyz / hyperlane-monorepo</a>
+        <div class="oss-desc">Co-author — Cosmos / CosmWasm agent integration; deployed across 125+ chains</div>
       </div>
       <div class="project-meta"><div class="project-lang">Rust</div><div class="project-stars">★ 56</div></div>
     </div>
     <div class="oss-item">
       <div>
-        <a class="oss-name" href="https://github.com/many-things/cw-hyperlane" target="_blank">many-things / cw-hyperlane</a>
-        <div class="oss-desc">Primary author — official Hyperlane CosmWasm implementation</div>
+        <a class="oss-name" href="https://github.com/many-things/cw-hyperlane" target="_blank" rel="noopener noreferrer">many-things / cw-hyperlane</a>
+        <div class="oss-desc">Primary author — official Hyperlane CosmWasm implementation, deployed across 125+ chains</div>
       </div>
       <div class="project-meta"><div class="project-lang">Rust</div><div class="project-stars">★ 55</div></div>
     </div>
     <div class="oss-item">
       <div>
-        <a class="oss-name" href="https://github.com/pylon-protocol/pylon-core-contracts" target="_blank">pylon-protocol / pylon-core-contracts</a>
-        <div class="oss-desc">Primary author — Pylon Protocol on Terra</div>
+        <a class="oss-name" href="https://github.com/pylon-protocol/pylon-core-contracts" target="_blank" rel="noopener noreferrer">pylon-protocol / pylon-core-contracts</a>
+        <div class="oss-desc">Primary author — Pylon Protocol on Terra, $200M+ peak TVL</div>
       </div>
       <div class="project-meta"><div class="project-lang">Rust</div><div class="project-stars">★ 23</div></div>
     </div>
     <div class="oss-item">
       <div>
-        <a class="oss-name" href="https://github.com/mitosis-org/protocol" target="_blank">mitosis-org / protocol</a>
+        <a class="oss-name" href="https://github.com/mitosis-org/protocol" target="_blank" rel="noopener noreferrer">mitosis-org / protocol</a>
         <div class="oss-desc">Contracts for programmable liquidity</div>
       </div>
       <div class="project-meta"><div class="project-lang">Solidity</div><div class="project-stars">★ 17</div></div>
     </div>
     <div class="oss-item">
       <div>
-        <a class="oss-name" href="https://github.com/Anchor-Protocol/eth-anchor-contracts" target="_blank">Anchor-Protocol / eth-anchor-contracts</a>
+        <a class="oss-name" href="https://github.com/Anchor-Protocol/eth-anchor-contracts" target="_blank" rel="noopener noreferrer">Anchor-Protocol / eth-anchor-contracts</a>
         <div class="oss-desc">Primary author — Ethereum bridge for Anchor Protocol</div>
       </div>
       <div class="project-meta"><div class="project-lang">Solidity</div><div class="project-stars">★ 17</div></div>
@@ -180,7 +184,7 @@
       <div class="section-line"></div>
     </div>
     <div class="gh-grass">
-      <img src="https://ghchart.rshah.org/F27A3A/byeongsu-hong" alt="GitHub contribution graph" class="gh-grass-img" />
+      <img src="https://ghchart.rshah.org/F27A3A/byeongsu-hong" alt="GitHub contribution graph" class="gh-grass-img" loading="lazy" decoding="async" />
     </div>
   </div>
 
@@ -193,9 +197,9 @@
 
 <!-- Tweaks -->
 <div id="tweaks-root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous" defer></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous" defer></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous" defer></script>
 <script type="text/babel" src="tweaks-panel.jsx"></script>
 <script type="text/babel" src="app.jsx"></script>
 </body>
