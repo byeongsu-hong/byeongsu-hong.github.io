@@ -133,15 +133,6 @@ a:hover { color: var(--accent); }
 .gh-grass-img { width: 100%; min-width: 640px; display: block; }
 
 /* ── TECH STACK ── */
-.stack-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1px;
-  background: var(--border);
-}
-.stack-cell {
-  background: var(--bg); padding: 16px 18px;
-}
-.stack-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--dim); margin-bottom: 6px; }
-.stack-items { font-size: 13px; font-weight: 700; line-height: 1.6; }
 
 /* ── PROJECTS ── */
 .project-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
